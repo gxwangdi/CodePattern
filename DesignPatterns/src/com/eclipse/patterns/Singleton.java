@@ -10,41 +10,35 @@ package com.eclipse.patterns;
  * where this is allowable and meaningful.
  * 
 */
-
 public class Singleton {
 
 	private static Singleton instance;
 	private String content;
-	
-	private Singleton(String s)
-	{
-		content=s;
-	}////private constructor
-	
-	public synchronized static Singleton getInstance(String s)
-	{
-		if (instance==null)
-			instance= new Singleton(s);
+
+	private Singleton(String s) {
+		content = s;
+	}// private constructor
+
+	public synchronized static Singleton getInstance(String s) {
+		if (instance == null) {
+			instance = new Singleton(s);
+		}
 		return instance;
-	}////insure only one instance
-	
-	public String getContent()
-	{
+	}// insure only one instance
+
+	public String getContent() {
 		return content;
 	}
-	
+
 	/**
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		Singleton s=Singleton.getInstance("instance 1");
+		Singleton s = Singleton.getInstance("instance 1");
 		System.out.println(s.getContent());
-		
-		Singleton ss=Singleton.getInstance("instance 2");
+
+		Singleton ss = Singleton.getInstance("instance 2");
 		System.out.println(ss.getContent());
 	}
 
-}//////end of Singleton class
-
-
+}// end of Singleton class
