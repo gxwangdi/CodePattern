@@ -2,7 +2,6 @@ package com.eclipse.patterns;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.ListIterator;
 
 /*
  * The Decorator pattern provides us with a way to modify the behavior of 
@@ -22,46 +21,44 @@ import java.util.ListIterator;
  * 
  * */
 
-interface Work{
+interface Work {
 	void insert();
-}//end of Work
+}// end of Work
 
-class DSquarePeg implements Work{
-	public void insert(){
+class DSquarePeg implements Work {
+	public void insert() {
 		System.out.println("insert square peg.");
 	}
-}//end of class SquarePeg
+}// end of class SquarePeg
 
 public class Decorator implements Work {
 
 	private Work work;
 	private List<String> others = new ArrayList<>();
-	
-	public Decorator(Work work){
+
+	public Decorator(Work work) {
 		this.work = work;
-		
+
 		others.add("dig~");
 		others.add("add wood~");
-	}//end of constructor
-	
-	/* We can add additional operations before insert() in this method.
-	 * The sequence could be specified according to the real situation.
-	 * */
-	public void insert(){
+	}// end of constructor
+
+	/*
+	 * We can add additional operations before insert() in this method. The sequence
+	 * could be specified according to the real situation.
+	 */
+	public void insert() {
 		// In this way we can enjoy work`s deliverable without inheritance.
 		otherMethod();
 		work.insert();
-	}//end of insert()
-	
-	public void otherMethod()
-	{
-		for (String s : others)
-		{
-			System.out.println(s
-					+" is running.");
+	}// end of insert()
+
+	public void otherMethod() {
+		for (String s : others) {
+			System.out.println(s + " is running.");
 		}
-	}//end of otherMethod()
-	
+	}// end of otherMethod()
+
 	/**
 	 * @param args
 	 */
@@ -71,8 +68,4 @@ public class Decorator implements Work {
 		decorator.insert();
 	}
 
-}//end of Decorator class 
-
-
-
-
+}// end of Decorator class
