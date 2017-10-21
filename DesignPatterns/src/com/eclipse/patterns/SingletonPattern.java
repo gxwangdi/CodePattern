@@ -10,18 +10,18 @@ package com.eclipse.patterns;
  * where this is allowable and meaningful.
  * 
 */
-public class Singleton {
+public class SingletonPattern {
 
-	private static Singleton instance;
+	private static SingletonPattern instance;
 	private String content;
 
-	private Singleton(String s) {
+	private SingletonPattern(String s) {
 		content = s;
 	}// private constructor
 
-	public synchronized static Singleton getInstance(String s) {
+	public synchronized static SingletonPattern getInstance(String s) {
 		if (instance == null) {
-			instance = new Singleton(s);
+			instance = new SingletonPattern(s);
 		}
 		return instance;
 	}// insure only one instance
@@ -34,10 +34,10 @@ public class Singleton {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		Singleton s = Singleton.getInstance("instance 1");
+		SingletonPattern s = SingletonPattern.getInstance("instance 1");
 		System.out.println(s.getContent());
 
-		Singleton ss = Singleton.getInstance("instance 2");
+		SingletonPattern ss = SingletonPattern.getInstance("instance 2");
 		System.out.println(ss.getContent());
 	}
 
