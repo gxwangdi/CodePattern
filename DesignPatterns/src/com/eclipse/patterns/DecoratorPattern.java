@@ -31,12 +31,12 @@ class DSquarePeg implements Work {
 	}
 }// end of class SquarePeg
 
-public class Decorator implements Work {
+public class DecoratorPattern implements Work {
 
 	private Work work;
 	private List<String> others = new ArrayList<>();
 
-	public Decorator(Work work) {
+	public DecoratorPattern(Work work) {
 		this.work = work;
 
 		others.add("dig~");
@@ -64,7 +64,7 @@ public class Decorator implements Work {
 	 */
 	public static void main(String[] args) {
 		Work squarePeg = new DSquarePeg();
-		Work decorator = new Decorator(squarePeg);
+		Work decorator = new DecoratorPattern(squarePeg);
 		decorator.insert();
 	}
 
