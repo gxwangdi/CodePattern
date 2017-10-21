@@ -36,7 +36,7 @@ class DBLogger implements iLogger {
 	}
 }
 
-public class Factory {
+public class FactoryPattern {
 
 	public static iLogger create(int selector) {
 		switch (selector) {
@@ -54,10 +54,10 @@ public class Factory {
 	 */
 	public static void main(String[] args) {
 		iLogger s;
-		s = Factory.create(1);
+		s = FactoryPattern.create(1);
 		if (s != null)
 			s.log();
-		s = Factory.create(2);
+		s = FactoryPattern.create(2);
 		if (s != null)
 			s.log();
 	}
