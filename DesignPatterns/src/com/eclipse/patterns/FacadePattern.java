@@ -18,6 +18,49 @@ package com.eclipse.patterns;
  * subsystems without requiring changes in the client code, and reduces 
  * compilation dependencies.
 * */
+class CPU {
+	public void freeze() {
+		System.out.println("CPU.freeze()...");
+	}
+	public void jump(long position) {
+		System.out.println("CPU.jump(" + position + ")...");
+	}
+	public void execute() {
+		System.out.println("CPU.execute()...");
+	}
+}
+
+class HardDrive {
+	public byte[] read(long lba, int size) {
+		System.out.println("HardDrive.read(" + lba + ", " + size + ")...");
+		return null;
+	}
+}
+
+class Memory {
+	public void load(long position, byte[] data) {
+		System.out.println("Memory.load(" + position + ", " + data + ")...");
+	}
+}
+
+class ComputerFacade {
+	private CPU processor;
+	private Memory ram;
+	private HardDrive hd;
+	
+	public ComputerFacade () {
+		this.processor = new CPU();
+		this.ram = new Memory();
+		this.hd = new HardDrive();
+	}
+	
+	public void start() {
+		processor.freeze();
+		ram.load(20L, hd.read(0L, 512));
+		processor.jump(20L);
+		processor.execute();
+	}
+}
 
 public class FacadePattern {
 
@@ -25,8 +68,8 @@ public class FacadePattern {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		System.out.println("Like using JDBC to connect to varieties of DB, " +
-				"extract the common part and build an interface, reduce the system dependencies.");
+		ComputerFacade computer = new ComputerFacade();
+		computer.start();
 	}
 
 }//end of Facade class
