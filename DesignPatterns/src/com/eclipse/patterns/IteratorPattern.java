@@ -45,6 +45,75 @@ import java.util.List;
  * iterators give you more control, because the calling program accesses each 
  * element directly and can decide whether to perform an operation on.
  * */
+interface IIterator<T> {
+	boolean hasNext();
+	void moveToNext();
+	T getCurrent();
+	void remove();
+}
+
+class Node<T> {
+	T value;
+	Node<T> next;
+}
+
+class LinkedList<T> {
+	Node<T> head = new Node<>();
+	Node<T> curr = head;
+	
+	private static class LinkedListIterator<T> implements IIterator {
+		private Node<T> mHead;
+		private Node<T> mCurr;
+		LinkedListIterator(Node<T> head) {
+			mHead = head;
+			mCurr = head;
+		}
+		
+		public boolean hasNext() {
+			return mCurr.next != null && mCurr.next.next != null;
+		}
+		
+		public void moveToNext() {
+			// No validation
+			mCurr = mCurr.next;
+		}
+		
+		public T getCurrent() {
+			// No validation
+			return mCurr.next.value;
+		}
+		
+		public void remove() {
+			// no validation
+			mCurr.next = mCurr.next.next;
+		}
+	}
+	
+	IIterator<T> getIterator() {
+		// Init a new iterator every time.
+		return new LinkedListIterator<T>(head);
+	}
+	
+	void add(T element) {
+		Node<T> node = new Node<>();
+		node.value = element;
+		curr.next = node;
+		curr = curr.next;
+	}
+	
+	void print() {
+		IIterator<T> ite = getIterator();
+		System.out.println("******************************");
+		System.out.print(ite.getCurrent() + "->");
+		while (ite.hasNext()) {
+			ite.moveToNext();
+			System.out.print(ite.getCurrent() + "->");
+		} 
+		System.out.println("null");
+		System.out.println("******************************");
+	}
+}
+
 public class IteratorPattern {
 
 	/**
@@ -52,7 +121,16 @@ public class IteratorPattern {
 	 */
 	public static void main(String[] args) {
 		standardSample();
-
+		
+		CustomizedLinkedListSample();
+	}
+	
+	static void CustomizedLinkedListSample() {
+		LinkedList<Integer> list = new LinkedList<>();
+		for (int i=0; i<10; i++) {
+			list.add(i);
+		}
+		list.print();
 	}
 
 	private static void standardSample() {
@@ -74,5 +152,4 @@ public class IteratorPattern {
 		System.out.println();
 		System.out.println(list);
 	}
-
 }// end of Iterator class
