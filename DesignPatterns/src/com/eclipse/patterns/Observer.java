@@ -282,9 +282,3 @@ public class Observer {
 //		RealEstateIndex realEstate = new RealEstateIndex();
 	}
 }//end of Observer class
-
-
-
-
-
-
