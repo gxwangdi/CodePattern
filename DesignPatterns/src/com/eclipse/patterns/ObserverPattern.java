@@ -246,7 +246,7 @@ class RealEstateIndex extends AbstractIndex {
 
 
 
-public class Observer {
+public class ObserverPattern {
 	/**
 	 * @param args
 	 */
