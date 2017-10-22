@@ -1,64 +1,73 @@
 package com.eclipse.patterns;
 
-/**
- * 
+/*
  * The Adapter pattern is used to convert the programming interface of
  * one class into that of another. We use adapters whenever we want unrelated
- * classes to work together in a single program.
- * 
+ * classes to work together in a single program. 
  * */
 
-interface IRoundPeg{
+interface IRoundPeg {
 	public void insertIntoHole(String msg);
-}//end of IRoundPeg
+}// end of IRoundPeg
 
-interface ISquarePeg{
+interface ISquarePeg {
 	public void insert(String str);
-}//end of ISquarePeg
+}// end of ISquarePeg
 
-class SquarePeg implements ISquarePeg{
-	public void insert(String str){
-		System.out.println("SquarePeg insert():"+str);
+class SquarePeg implements ISquarePeg {
+	public void insert(String str) {
+		System.out.println("SquarePeg insert():" + str);
 	}
-}//end of SquarePeg class
+}// end of SquarePeg class
 
-class RoundPeg implements IRoundPeg{
-	public void insertIntoHole(String msg){
-		System.out.println("RoundPeg insertIntoHole():"+msg);
+class RoundPeg implements IRoundPeg {
+	public void insertIntoHole(String msg) {
+		System.out.println("RoundPeg insertIntoHole():" + msg);
 	}
-}//end of RoundPeg class
+}// end of RoundPeg class
 
-class PegAdapter implements IRoundPeg, ISquarePeg{
+class PegAdapter implements IRoundPeg, ISquarePeg {
 	private RoundPeg roundPeg;
 	private SquarePeg squarePeg;
-	
-	public PegAdapter(RoundPeg peg){
+
+	public PegAdapter(RoundPeg peg) {
 		this.roundPeg = peg;
 	}
-	
-	public PegAdapter(SquarePeg peg){
+
+	public PegAdapter(SquarePeg peg) {
 		this.squarePeg = peg;
 	}
-	
+
 	@Override
-	public void insert(String str){
+	public void insert(String str) {
+		if (roundPeg == null) {
+			return;
+		}
 		roundPeg.insertIntoHole(str);
 	}
 
 	@Override
 	public void insertIntoHole(String msg) {
-		// TODO Auto-generated method stub
+		if (squarePeg == null) {
+			return;
+		}
 		squarePeg.insert(msg);
 	}
-}//end of PegAdapter class
+}// end of PegAdapter class
 
-public class Adapter {
+public class AdapterPattern {
 
 	/**
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		PegAdapter adapter = new PegAdapter(new SquarePeg());
+		adapter.insert("1");
+		adapter.insertIntoHole("2");
+		
+		adapter = new PegAdapter(new RoundPeg());
+		adapter.insert("1");
+		adapter.insertIntoHole("2");
 	}
 
-}//end of Adapter class
+}// end of Adapter class
