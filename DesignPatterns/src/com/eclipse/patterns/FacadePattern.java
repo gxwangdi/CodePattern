@@ -19,7 +19,7 @@ package com.eclipse.patterns;
  * compilation dependencies.
 * */
 
-public class Facade {
+public class FacadePattern {
 
 	/**
 	 * @param args
