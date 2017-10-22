@@ -4,9 +4,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 /*
+ * The abstract factory pattern provides a way to encapsulate a group of 
+ * individual factories that have a common theme without specifying their 
+ * concrete classes.
  * 
+ * Use of this pattern makes it possible to interchange concrete 
+ * implementations without changing the code that uses them, even at runtime. 
+ * However, employment of this pattern, as with similar design patterns, may 
+ * result in unnecessary complexity and extra work in the initial writing 
+ * of code. Additionally, higher levels of separation and abstraction can 
+ * result in systems that are more difficult to debug and maintain.
  * */
-
 class Context {
 	Context() {
 		System.out.println("Context constructor.");
