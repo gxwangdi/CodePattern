@@ -251,13 +251,35 @@ public class Observer {
 	 * @param args
 	 */
 	public static void main(String[] args) {
+		MarketWatch mwObserver = new MarketWatch();
+		ScottTradeMobileClient stmcObserver = new ScottTradeMobileClient();
+		BusinessDaily bdObserver = new BusinessDaily();
+		FinancialTimes ftObserver = new FinancialTimes();
 		DJIIndex dji = new DJIIndex();
+		dji.register(mwObserver);
+		dji.register(stmcObserver);
+		dji.register(bdObserver);
+		dji.register(ftObserver);
+		dji.notifyChange();
+		dji.notifyCollectiveChange(1, false);
+		dji.unregister(ftObserver);
+		dji.unregister(stmcObserver);
+		dji.notifyChange();
 		
 		NasdaqIndex nasdaq = new NasdaqIndex();
+		nasdaq.register(mwObserver);
+		nasdaq.register(stmcObserver);
+		nasdaq.register(bdObserver);
+		nasdaq.register(ftObserver);
+		nasdaq.notifyChange();
+		nasdaq.notifyCollectiveChange(1, false);
+		nasdaq.unregister(mwObserver);
+		nasdaq.unregister(stmcObserver);
+		nasdaq.notifyChange();
 		
-		CommodityIndex commodity = new CommodityIndex();
+//		CommodityIndex commodity = new CommodityIndex();
 		
-		RealEstateIndex realEstate = new RealEstateIndex();
+//		RealEstateIndex realEstate = new RealEstateIndex();
 	}
 }//end of Observer class
 
