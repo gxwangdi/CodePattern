@@ -12,20 +12,21 @@ import java.util.List;
  * 
  * 
  * Component (Graphic)
-   declares the interface for objects in the composition.
-   implements default behaviour for the interface common to all classes, as appropriate.
-   declares an interface for accessing and managing its child components.
-   (optional) defines an interface for accessing a component's parent in the recursive structure, and implements it if that's appropriate.
+ * declares the interface for objects in the composition.
+ * implements default behavior for the interface common to all classes, as appropriate.
+ * declares an interface for accessing and managing its child components.
+ * (optional) defines an interface for accessing a component's parent in the recursive 
+ * structure, and implements it if that's appropriate.
  
-   Leaf (Rectangle, Line, Text, etc.)
-   represents leaf objects in the composition. A leaf has no children.
-   defines behaviour for primitive objects in the composition. Composite (Picture)
-   defines behaviour for components having children.
-   stores child components.
-   implements child-related operations in the Component interface.
- 
-   Client
-   manipulates objects in the composition through the Component interface.
+ * Leaf (Rectangle, Line, Text, etc.)
+ * represents leaf objects in the composition. A leaf has no children.
+ * defines behaviour for primitive objects in the composition. Composite (Picture)
+ * defines behaviour for components having children.
+ * stores child components.
+ * implements child-related operations in the Component interface.
+ *
+ * Client
+ * manipulates objects in the composition through the Component interface.
  * 
  * 
  * Use the Composite pattern when
