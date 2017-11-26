@@ -21,36 +21,36 @@ public class IterableInterface {
 
 	public static void main(String[] args) {
 		List<Integer> myList = new ArrayList<>();
-		for (int i = 0; i<10; i++) {
+		for (int i = 0; i < 10; i++) {
 			myList.add(i);
 		}
-		
+
 		Iterator<Integer> it = myList.iterator();
 		while (it.hasNext()) {
 			Integer i = it.next();
 			System.out.println("Iterator Values:" + i);
 		}
-		
+
 		myList.forEach(new Consumer<Integer>() {
 
 			@Override
 			public void accept(Integer t) {
-				System.out.println("forEach anonymous class Value::"+t);
+				System.out.println("forEach anonymous class Value::" + t);
 			}
 		});
-		
+
 		myList.forEach((t) -> {
-			System.out.println("forEach lambda expression value::"+t);
+			System.out.println("forEach lambda expression value::" + t);
 		});
-		
+
 		MyConsumer action = new MyConsumer();
 		myList.forEach(action);
 	}
-	
-	// Customized consumer implementation.  
+
+	// Customized consumer implementation.
 	private static class MyConsumer implements Consumer<Integer> {
 		public void accept(Integer t) {
-			System.out.println("My consumer impl Value::"+t);
+			System.out.println("My consumer impl Value::" + t);
 		}
 	}
 }
