@@ -1,4 +1,4 @@
-package com.eclipse.patterns;
+package edu.gxwangdi.design.patterns;
 
 /**
  * Strategy allows you to select one of several algorithms dynamically. These

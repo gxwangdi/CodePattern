@@ -1,4 +1,4 @@
-package com.eclipse.patterns;
+package edu.gxwangdi.design.patterns;
 
 /**
  * 1. The Bridge pattern is intended to keep the interface to your client

@@ -1,4 +1,4 @@
-package com.eclipse.patterns;
+package edu.gxwangdi.design.patterns;
 
 /**
  * 1. The Mediator makes loose coupling possible between objects in a
@@ -14,7 +14,7 @@ interface.
 5. The Mediator can become monolithic in complexity, making it hard to
 change and maintain. Sometimes you can improve this situation by
 revising the responsibilities you have given the Mediator. Each object
-should carry out it¡¯s own tasks and the Mediator should only manage the
+should carry out itï¿½ï¿½s own tasks and the Mediator should only manage the
 interaction between objects.
 6. Each Mediator is a custom-written class that has methods for each
 Colleague to call and knows what methods each Colleague has available.

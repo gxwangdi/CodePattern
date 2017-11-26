@@ -1,4 +1,4 @@
-package com.eclipse.patterns;
+package edu.gxwangdi.design.patterns;
 
 /*
  * The Prototype pattern is used when creating an instance of a class is very

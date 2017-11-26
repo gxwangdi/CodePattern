@@ -1,4 +1,4 @@
-package com.eclipse.patterns;
+package edu.gxwangdi.design.patterns;
 
 /**
  * 1. The main purpose for this pattern, like a number of others, is to reduce
@@ -10,7 +10,7 @@ requests, and you can change both the chain and the responsibilities at run
 time.
 3. An advantage is that there may not be any object that can handle the
 request, however, the last object in the chain may simply discard any
-requests it can¡¯t handle.
+requests it canï¿½ï¿½t handle.
 4. Finally, since Java can not provide multiple inheritance, the basic Chain
 class needs to be an interface rather than an abstract class, so that the
 individual objects can inherit from another useful hierarchy, as we did

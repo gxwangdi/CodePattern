@@ -1,4 +1,4 @@
-package com.eclipse.patterns;
+package edu.gxwangdi.design.patterns;
 
 import java.io.File;
 
@@ -14,7 +14,7 @@ has an effect on the Caretaker class (here the Mediator) which may have to
 design strategies to limit the number of objects for which it saves state. In our
 simple example, we impose no such limits. In cases where objects change in a
 predictable manner, each Memento may be able to get by with saving only
-incremental changes of an object¡¯s state.
+incremental changes of an objectï¿½ï¿½s state.
  * */
 
 /* example below shows:

@@ -1,4 +1,4 @@
-package com.eclipse.patterns;
+package edu.gxwangdi.design.patterns;
 
 /*
  * The Adapter pattern is used to convert the programming interface of

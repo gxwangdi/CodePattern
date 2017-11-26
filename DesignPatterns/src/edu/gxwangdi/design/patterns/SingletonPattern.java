@@ -1,4 +1,4 @@
-package com.eclipse.patterns;
+package edu.gxwangdi.design.patterns;
 
 /*
  * There are any number of cases in programming where you need to make sure that 

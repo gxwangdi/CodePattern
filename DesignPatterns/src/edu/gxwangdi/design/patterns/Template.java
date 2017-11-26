@@ -1,4 +1,4 @@
-package com.eclipse.patterns;
+package edu.gxwangdi.design.patterns;
 
 /**
  * Template patterns occur all the time in OO software and are neither complex

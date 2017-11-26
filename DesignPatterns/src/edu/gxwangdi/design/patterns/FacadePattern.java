@@ -1,4 +1,4 @@
-package com.eclipse.patterns;
+package edu.gxwangdi.design.patterns;
 
 /*
  * Frequently, as your programs evolve and develop, they grow in complexity. 

@@ -1,4 +1,4 @@
-package com.eclipse.patterns;
+package edu.gxwangdi.design.patterns;
 
 /*
  * A Builder pattern is somewhat like an Abstract Factory pattern in that both

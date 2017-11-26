@@ -1,4 +1,4 @@
-package com.eclipse.patterns;
+package edu.gxwangdi.design.patterns;
 
 /**
  * The State pattern is used when you want to have an enclosing class
@@ -12,7 +12,7 @@ significantly.
 1. The State pattern localizes state-specific behavior in an individual class
 for each state, and puts all the behavior for that state in a single object.
 2. It eliminates the necessity for a set of long, look-alike conditional
-statements scattered through the program¡¯s code.
+statements scattered through the programï¿½ï¿½s code.
 3. It makes transition explicit. Rather than having a constant that specifies
 which state the program is in, and that may not always be checked
 correctly, this makes the change explicit by copying one of the states to
