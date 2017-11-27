@@ -18,6 +18,9 @@ public class DefaultImplementationInInterface implements Interface1, Interface2 
 		Interface1 i1 = new DefaultImplementationInInterface();
 		i1.method1("Hello");
 		i1.log("World!");
+		
+		i1 = (s) -> System.out.println(s);
+		i1.method1("lambda expressions for interface that only one method needs implementation.");
 
 		Interface2 i2 = new DefaultImplementationInInterface();
 		i2.method2();
